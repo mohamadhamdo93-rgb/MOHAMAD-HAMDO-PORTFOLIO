@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#17445a"/>
+      <stop offset="45%" stop-color="#071827"/>
+      <stop offset="100%" stop-color="#020711"/>
+    </radialGradient>
+    <pattern id="p" width="180" height="180" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="180" height="180" fill="none"/>
+      <path d="M90 8c30 36 48 54 84 82-36 28-54 46-84 82-30-36-48-54-84-82C42 62 60 44 90 8Z" fill="none" stroke="#6beaff" stroke-opacity=".18" stroke-width="2"/>
+      <path d="M90 38c18 22 30 34 52 52-22 18-34 30-52 52-18-22-30-34-52-52 22-18 34-30 52-52Z" fill="none" stroke="#ffffff" stroke-opacity=".10" stroke-width="1.4"/>
+      <circle cx="90" cy="90" r="9" fill="#72f7ff" fill-opacity=".16"/>
+      <path d="M0 90h180M90 0v180" stroke="#bffcff" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1800" height="1200" fill="url(#g)"/>
+  <rect width="1800" height="1200" fill="url(#p)"/>
+  <circle cx="265" cy="160" r="160" fill="#00d9ff" opacity=".18" filter="url(#soft)"/>
+  <circle cx="1510" cy="925" r="230" fill="#00d9ff" opacity=".10" filter="url(#soft)"/>
+  <circle cx="920" cy="1120" r="180" fill="#e9fdff" opacity=".06" filter="url(#soft)"/>
+</svg>

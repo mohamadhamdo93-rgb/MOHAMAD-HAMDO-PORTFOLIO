@@ -1,0 +1,28 @@
+{
+  "name": "mohamad-hamdo-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "server": "node server/index.js",
+    "start": "node server/index.js",
+    "zip": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/export-zip.ps1"
+  },
+  "dependencies": {
+    "@portabletext/react": "^6.2.0",
+    "@sanity/client": "^7.22.1",
+    "@sanity/image-url": "^2.1.1",
+    "@vitejs/plugin-react": "^5.0.0",
+    "express": "^5.1.0",
+    "framer-motion": "^12.40.0",
+    "lucide-react": "^0.468.0",
+    "nodemailer": "^8.0.10",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.17.0",
+    "vite": "^7.0.0"
+  }
+}
