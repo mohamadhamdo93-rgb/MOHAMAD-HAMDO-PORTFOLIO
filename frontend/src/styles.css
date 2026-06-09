@@ -1698,7 +1698,9 @@ textarea { resize: vertical; }
     z-index: 99999;
   }
 
-  .nav-wrap nav { display: none; }
+  .nav-wrap nav {
+  display: flex;
+}
 
   .nav-wrap nav.mobile-open {
     display: flex;
