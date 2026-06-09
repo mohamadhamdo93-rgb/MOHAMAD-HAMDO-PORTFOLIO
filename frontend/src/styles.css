@@ -2758,3 +2758,49 @@ body {
     margin-left:auto;
   }
 }
+
+
+@media (max-width:768px){
+
+  .courses-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    padding:0;
+  }
+
+  .course-card{
+    padding:12px;
+    border-radius:20px;
+  }
+
+  .course-thumb{
+    height:120px;
+    margin-bottom:10px;
+  }
+
+  .course-meta{
+    display:none;
+  }
+
+  .course-rating{
+    justify-content:center;
+    margin:8px 0;
+    font-size:12px;
+  }
+
+  .course-footer{
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .course-footer button{
+    display:none;
+  }
+
+  .course-card h3{
+    font-size:14px;
+    text-align:center;
+    min-height:38px;
+  }
+
+}
