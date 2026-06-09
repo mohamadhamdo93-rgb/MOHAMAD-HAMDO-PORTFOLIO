@@ -55,6 +55,8 @@ export default function Courses({ t, lang }) {
                 <img
                   src={urlFor(course.image).url()}
                   alt={course.title}
+                  loading="lazy"
+                  decoding="async"
                 />
               ) : (
                 <GraduationCap size={48} />

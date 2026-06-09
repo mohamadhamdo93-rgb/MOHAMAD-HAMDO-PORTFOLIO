@@ -45,6 +45,8 @@ export default function BlogPost() {
           src={urlFor(post.mainImage).width(1600).url()}
           alt={post.title}
           className="blog-post-cover"
+          loading="lazy"
+          decoding="async"
         />
       )}
 
@@ -69,6 +71,8 @@ export default function BlogPost() {
         src={urlFor(img).width(1200).url()}
         alt=""
         className="gallery-image"
+        loading="lazy"
+        decoding="async"
         onClick={() =>
           window.open(urlFor(img).url(), "_blank")
         }

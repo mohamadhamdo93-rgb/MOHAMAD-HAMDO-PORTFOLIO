@@ -44,6 +44,23 @@ body {
   overflow-x: hidden;
 }
 
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve focus visibility for keyboard users */
+:focus {
+  outline: 3px solid rgba(103,239,255,.22);
+  outline-offset: 3px;
+}
+
+/* Touch optimizations */
+button, a, input, textarea {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
 html[dir="rtl"] body { font-family: var(--font-ar); }
 a { color: inherit; text-decoration: none; }
 button, input, textarea { font: inherit; }
@@ -952,22 +969,6 @@ textarea { resize: vertical; }
 }
 .message-list span, .message-list small { display: block; color: var(--muted); }
 
-.whatsapp-float, .footer-social a {
-  position: fixed;
-  z-index: 30;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: #00131b;
-  background: var(--cyan);
-  box-shadow: 0 0 30px rgba(103,239,255,.46);
-}
-.whatsapp-float {
-  width: 58px;
-  height: 58px;
-  inset-inline-end: 24px;
-  bottom: 24px;
-}
 
 .site-footer {
   width: min(1180px, calc(100% - 32px));
@@ -1066,6 +1067,7 @@ textarea { resize: vertical; }
 @media (max-width: 680px) {
   .section { width: min(100% - 22px, 1180px); padding-top: 66px; }
   .nav-wrap { top: 8px; width: calc(100% - 16px); margin-top: 8px; }
+  .nav-wrap nav a { padding: 12px 10px; font-size: 15px; }
   .hero { padding-top: 46px; }
   .glass-panel { padding: 22px; border-radius: 22px; }
   .hero-buttons a { width: 100%; }
@@ -1559,12 +1561,10 @@ textarea { resize: vertical; }
   text-transform:uppercase;
 }
 
-.project-info h1{
-  font-size:92px;
-
-  line-height:1;
-
-  margin:0;
+@media (max-width: 768px) {
+  .project-info h1{
+    font-size: 42px;
+  }
 }
 
 .project-info p{
@@ -1970,7 +1970,7 @@ textarea { resize: vertical; }
 }
 
 .services-marquee {
-  width: 120%;
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -2663,4 +2663,98 @@ textarea { resize: vertical; }
     black 90%,
     transparent
   );
+}
+
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.site-shell {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width:768px){
+
+  .blog-grid{
+    display:flex;
+    overflow-x:auto;
+    gap:12px;
+    padding-bottom:10px;
+    scroll-snap-type:x mandatory;
+  }
+
+  .blog-card{
+    flex:0 0 220px;
+    scroll-snap-align:start;
+  }
+}
+
+
+
+.mobile-menu-btn{
+  display:none;
+}
+
+@media (max-width:768px){
+
+  .mobile-menu-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:44px;
+    height:44px;
+
+    border:none;
+    background:transparent;
+    color:var(--text);
+
+    cursor:pointer;
+  }
+
+  .nav-wrap{
+    position:relative;
+  }
+
+  .nav-wrap nav{
+    display:none;
+  }
+
+  .nav-wrap nav.mobile-open{
+    display:flex;
+
+    position:absolute;
+
+    top:70px;
+    left:0;
+    right:0;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    padding:16px;
+
+    border-radius:24px;
+
+    background:rgba(8,20,35,.95);
+
+    backdrop-filter:blur(20px);
+
+    z-index:9999;
+  }
+
+  .nav-wrap nav.mobile-open .nav-link{
+    width:100%;
+    text-align:left;
+    padding:12px;
+  }
+
+  .nav-actions{
+    margin-left:auto;
+  }
 }

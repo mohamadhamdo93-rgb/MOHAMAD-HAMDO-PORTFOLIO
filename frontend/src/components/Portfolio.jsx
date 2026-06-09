@@ -11,6 +11,8 @@ export function ProjectVisual({ project }) {
         src={urlFor(project.image).url()}
         alt={project.title}
         className="project-image"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   );

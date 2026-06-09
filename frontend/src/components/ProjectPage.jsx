@@ -123,6 +123,8 @@ export default function ProjectPage({ t }) {
               <img
                 src={urlFor(project.image).url()}
                 alt=""
+                loading="lazy"
+                decoding="async"
                 onClick={() => setActiveImage(project.image)}
               />
             )}
@@ -132,6 +134,8 @@ export default function ProjectPage({ t }) {
                 key={index}
                 src={urlFor(img).url()}
                 alt=""
+                loading="lazy"
+                decoding="async"
                 onClick={() => setActiveImage(img)}
               />
             ))}

@@ -67,14 +67,14 @@ export default function Contact({ t, setToast }) {
 
       <div className="glass-panel">
 
-        <div className="glass-panel service-header">
+        <div className="service-header">
           <span className="eyebrow">
             Contact
           </span>
 
-          <h2>
-            Let's Work Together
-          </h2>
+          <h2 className="contact-title">
+  Let's Work Together
+</h2>
         </div>
 
         <div className="contact-links">

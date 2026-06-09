@@ -41,6 +41,8 @@ export default function Blog() {
                 src={urlFor(post.mainImage).width(800).url()}
                 alt={post.title}
                 className="blog-image"
+                loading="lazy"
+                decoding="async"
               />
             ) : (
               <BookOpen />

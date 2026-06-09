@@ -91,6 +91,8 @@ export default function Testimonials() {
                   .height(200)
                   .url()}
                 alt={testimonial.name}
+                loading="lazy"
+                decoding="async"
               />
             ) : (
               testimonial.name?.charAt(0)

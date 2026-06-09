@@ -1,5 +1,5 @@
-import React from "react";
-import { Moon, Sun } from "lucide-react";
+import React, { useState } from "react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar({
@@ -10,6 +10,7 @@ export default function Navbar({
   setTheme,
 }) {
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const ids = [
     "home",
@@ -23,6 +24,8 @@ export default function Navbar({
   ];
 
   const handleSectionClick = (id) => {
+    setMenuOpen(false);
+
     if (location.pathname !== "/") {
       window.location.href = `/#${id}`;
       return;
@@ -44,7 +47,14 @@ export default function Navbar({
         MH
       </Link>
 
-      <nav>
+      <button
+        className="mobile-menu-btn"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      <nav className={menuOpen ? "mobile-open" : ""}>
         {t.nav.map((item, i) => (
           <button
             key={item}
@@ -60,11 +70,7 @@ export default function Navbar({
         <button
           className="toggle"
           onClick={() =>
-            setTheme(
-              theme === "dark"
-                ? "light"
-                : "dark"
-            )
+            setTheme(theme === "dark" ? "light" : "dark")
           }
           aria-label="Toggle theme"
         >
@@ -77,11 +83,7 @@ export default function Navbar({
         <button
           className="lang-switch"
           onClick={() =>
-            setLang(
-              lang === "en"
-                ? "ar"
-                : "en"
-            )
+            setLang(lang === "en" ? "ar" : "en")
           }
         >
           {lang === "en" ? "ع" : "EN"}
