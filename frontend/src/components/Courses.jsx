@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { GraduationCap, Star } from "lucide-react";
 import { client, urlFor } from "../sanity/sanityClient";
 
-export default function Courses({ t, lang }) {
-    const [courses, setCourses] = useState([]);
+export default function Courses({ lang }) {
+  const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     client
@@ -11,38 +11,29 @@ export default function Courses({ t, lang }) {
         *[_type == "course"]{
           _id,
           title,
-          category,
-          duration,
-          students,
           price,
           rating,
           image
         }
       `)
-      .then((data) => {
-        console.log("SANITY COURSES:", data);
-        setCourses(data);
-      })
-      .catch((err) => {
-        console.error("SANITY ERROR:", err);
-      });
+      .then((data) => setCourses(data))
+      .catch(console.error);
   }, []);
 
   return (
     <section className="section" id="courses">
 
       <div className="courses-title">
-  <span className="eyebrow">
-    {lang === "ar" ? "تعلّم وتطوّر" : "Learn & Grow"}
-  </span>
+        <span className="eyebrow">
+          {lang === "ar" ? "تعلّم وتطوّر" : "Learn & Grow"}
+        </span>
 
-  <h2>
-    {lang === "ar"
-      ? "الدورات التدريبية"
-      : "Online Courses"}
-  </h2>
-</div>
-
+        <h2>
+          {lang === "ar"
+            ? "الدورات التدريبية"
+            : "Online Courses"}
+        </h2>
+      </div>
 
       <div className="courses-grid">
         {courses.map((course) => (
@@ -50,27 +41,20 @@ export default function Courses({ t, lang }) {
             className="course-card glass-panel"
             key={course._id}
           >
+
             <div className="course-thumb">
               {course.image ? (
                 <img
                   src={urlFor(course.image).url()}
                   alt={course.title}
                   loading="lazy"
-                  decoding="async"
                 />
               ) : (
                 <GraduationCap size={48} />
               )}
             </div>
 
-            <small>{course.category}</small>
-
             <h3>{course.title}</h3>
-
-            <div className="course-meta">
-              <span>{course.duration}</span>
-              <span>{course.students}</span>
-            </div>
 
             <div className="course-rating">
               <Star size={16} fill="currentColor" />
@@ -83,20 +67,18 @@ export default function Courses({ t, lang }) {
             </div>
 
             <div className="course-footer">
-              <strong>${course.price}</strong>
+  <strong>${course.price}</strong>
 
-              <a
-  href="https://wa.me/963951516123"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="whatsapp-btn"
->
-  {lang === "ar"
-    ? "استفسار واتساب"
-    : "WhatsApp"}
-</a>
+  <a
+    href="https://wa.me/963951516123"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="whatsapp-btn"
+  >
+    {lang === "ar" ? "واتساب" : "WhatsApp"}
+  </a>
+</div>
 
-            </div>
           </article>
         ))}
       </div>
