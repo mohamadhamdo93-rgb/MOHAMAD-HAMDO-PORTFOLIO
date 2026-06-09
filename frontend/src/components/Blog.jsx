@@ -12,9 +12,7 @@ export default function Blog() {
         *[_type == "blog"] | order(publishedAt desc){
           _id,
           title,
-          excerpt,
           slug,
-          publishedAt,
           mainImage
         }
       `)
@@ -24,40 +22,31 @@ export default function Blog() {
 
   return (
     <section className="section" id="blog">
-      <div className="glass-panel service-header">
-        <span className="eyebrow">Blog</span>
-        <h2>Latest Insights</h2>
+      <div className="glass-panel services-header">
+        <h2>Blog</h2>
       </div>
 
       <div className="blog-grid">
         {posts.map((post) => (
           <Link
-  to={`/blog/${post.slug?.current}`}
-  className="blog-card"
-  key={post._id}
->
+            key={post._id}
+            to={`/blog/${post.slug?.current}`}
+            className="blog-card"
+          >
             {post.mainImage ? (
               <img
                 src={urlFor(post.mainImage).width(800).url()}
                 alt={post.title}
                 className="blog-image"
                 loading="lazy"
-                decoding="async"
               />
             ) : (
-              <BookOpen />
+              <div className="blog-image-placeholder">
+                <BookOpen size={40} />
+              </div>
             )}
 
             <h3>{post.title}</h3>
-
-<p>Slug: {post.slug?.current}</p>
-
-<p>{post.excerpt}</p>
-
-
-            <Link to={`/blog/${post.slug?.current}`}>
-  Read insight
-</Link>
           </Link>
         ))}
       </div>

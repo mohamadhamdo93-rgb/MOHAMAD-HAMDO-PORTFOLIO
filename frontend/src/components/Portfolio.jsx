@@ -86,12 +86,9 @@ export default function Portfolio({ t }) {
 
   return (
     <section className="section" id="portfolio">
-      <div className="glass-panel service-header">
-        <span className="eyebrow">
-  Selected Work
-</span>
-        <h2>Portfolio</h2>
-      </div>
+      <div className="glass-panel services-header">
+  <h2>Portfolio</h2>
+</div>
 
       <div className="filters">
         {categories.map((cat) => (

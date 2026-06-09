@@ -65,13 +65,9 @@ export default function Testimonials() {
 
   return (
     <section className="section" id="testimonials">
-      <div className="glass-panel service-header">
-        <span className="eyebrow">
-          Testimonials
-        </span>
-
-        <h2>Client Testimonials</h2>
-      </div>
+      <div className="glass-panel services-header">
+  <h2>Testimonials</h2>
+</div>
 
       <div className="testimonial">
         <button onClick={prevTestimonial}>

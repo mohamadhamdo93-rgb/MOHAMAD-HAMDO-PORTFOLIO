@@ -8,7 +8,7 @@ import Services from "./components/Services.jsx";
 import Portfolio from "./components/Portfolio.jsx";
 import Courses from "./components/Courses.jsx";
 import Testimonials from "./components/Testimonials.jsx";
-import Blog from "./components/Blog.jsx";
+import Blog from "./components/Blog.jsx"; 
 import Contact from "./components/Contact.jsx";
 import Admin from "./components/Admin.jsx";
 import ProjectPage from "./components/ProjectPage.jsx";
